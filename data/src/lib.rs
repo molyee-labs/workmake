@@ -1,15 +1,11 @@
 pub mod company;
 pub mod member;
 pub mod project;
-pub mod email;
 pub mod phone;
-pub mod url;
-pub mod uuid;
 pub mod account;
 pub mod job;
 pub mod user;
 pub mod contract;
-pub mod time;
 pub mod document;
 pub mod cost;
 pub mod transaction;

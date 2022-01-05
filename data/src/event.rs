@@ -1,6 +1,6 @@
 use crate::user;
-use crate::time::DateTime;
 use crate::action::Action;
+use time::DateTime;
 
 pub struct Event {
     dtime: DateTime,

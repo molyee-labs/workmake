@@ -1,9 +1,9 @@
-use crate::time::Date;
-use crate::uuid::Uuid;
 use crate::account;
 use crate::document;
 use crate::cost::Cost;
 use crate::transaction::Tx;
+use time::Date;
+use uuid::Uuid;
 
 pub struct Id(Uuid);
 

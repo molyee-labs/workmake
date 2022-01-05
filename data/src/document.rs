@@ -1,5 +1,5 @@
-use crate::url::Url;
-use crate::uuid::Uuid;
+use url::Url;
+use uuid::Uuid;
 
 pub struct Id(Uuid);
 

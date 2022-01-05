@@ -1,5 +1,5 @@
-use crate::uuid::Uuid;
-use crate::url::Url;
+use uuid::Uuid;
+use url::Url;
 
 pub enum Tx {
     Url(Url),

@@ -7,3 +7,6 @@ edition = "2021"
 
 [dependencies]
 uuid = { path = "../../common/uuid" }
+url = { path = "../../common/url" }
+email = { path = "../../common/email" }
+time = { path = "../../common/time" }

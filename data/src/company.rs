@@ -1,9 +1,9 @@
 use crate::member::Members;
-use crate::uuid::Uuid;
 use crate::phone::Phone;
-use crate::email::Email;
 use crate::address::Address;
-use crate::url::Url;
+use uuid::Uuid;
+use email::Email;
+use url::Url;
 
 pub struct Id(Uuid);
 

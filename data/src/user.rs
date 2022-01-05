@@ -1,8 +1,8 @@
-use crate::uuid::Uuid;
-use crate::url::Url;
 use crate::phone::Phone;
-use crate::email::Email;
 use crate::address::Address;
+use email::Email;
+use uuid::Uuid;
+use url::Url;
 
 pub struct Id(Uuid); // unique name
 

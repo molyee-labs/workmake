@@ -1,4 +1,5 @@
-use data::email::Email;
+use async_trait::async_trait;
+use email::Email;
 use data::phone::Phone;
 use data::user::{self, User, Profile};
 use crate::error::Result;
@@ -13,6 +14,7 @@ pub struct Password {
     inner: String,
 }
 
+#[async_trait]
 pub trait UserService {
     async fn create(&self, login: Login, passw: Password) -> Result<User>;
     async fn get(&self, id: user::Id) -> Result<User>;

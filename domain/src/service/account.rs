@@ -1,6 +1,8 @@
+use async_trait::async_trait;
 use data::account::{self, Account, Accounts, Owner};
 use crate::error::Result;
 
+#[async_trait]
 pub trait AccountService {
     async fn create(&self, owner: Owner) -> Result<account::Id>;
     async fn get(&self, id: account::Id) -> Result<Account>;

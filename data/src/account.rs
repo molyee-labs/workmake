@@ -1,6 +1,6 @@
 use crate::company;
 use crate::user;
-use crate::uuid::Uuid;
+use uuid::Uuid;
 
 pub struct Id(Uuid);
 

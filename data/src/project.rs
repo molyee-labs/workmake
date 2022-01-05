@@ -1,7 +1,7 @@
-use crate::uuid::Uuid;
 use crate::account::Accounts;
 use crate::cost::Cost;
 use core::ops::Range;
+use uuid::Uuid;
 
 pub struct Id(Uuid);
 

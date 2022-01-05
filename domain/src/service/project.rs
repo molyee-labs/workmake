@@ -1,8 +1,10 @@
+use async_trait::async_trait;
 use data::account::Account;
 use data::member::Members;
 use data::project::{self, Project, Details};
 use crate::error::Result;
 
+#[async_trait]
 pub trait ProjectService {
     async fn create(&self, owner: Account, name: String) -> Result<Project>;
     async fn set_name(&self, id: project::Id, name: String) -> Result<()>;

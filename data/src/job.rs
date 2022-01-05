@@ -1,7 +1,7 @@
 use crate::event::Log;
 use crate::project;
 use crate::contract;
-use crate::uuid::Uuid;
+use uuid::Uuid;
 
 pub struct Id(Uuid);
 
