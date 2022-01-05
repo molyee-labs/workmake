@@ -3,5 +3,6 @@
 members = [
     "data",
     "domain",
+    "core",
     "cli"
 ]

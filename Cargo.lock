@@ -110,6 +110,13 @@ name = "convert"
 version = "0.1.0"
 
 [[package]]
+name = "core"
+version = "0.1.0"
+dependencies = [
+ "domain",
+]
+
+[[package]]
 name = "data"
 version = "0.1.0"
 dependencies = [
