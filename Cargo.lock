@@ -113,6 +113,7 @@ version = "0.1.0"
 name = "core"
 version = "0.1.0"
 dependencies = [
+ "async-trait",
  "domain",
 ]
 
@@ -133,6 +134,7 @@ dependencies = [
  "async-trait",
  "data",
  "email",
+ "url 0.1.0",
 ]
 
 [[package]]

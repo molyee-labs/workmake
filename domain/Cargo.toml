@@ -8,4 +8,5 @@ edition = "2021"
 [dependencies]
 data = { path = "../data" }
 email = { path = "../../common/email" }
+url = { path = "../../common/url" }
 async-trait = "0.1"

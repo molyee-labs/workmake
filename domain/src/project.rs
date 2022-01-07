@@ -1,7 +1,8 @@
 use async_trait::async_trait;
 use data::account::Account;
 use data::member::Members;
-use data::project::{self, Project, Details};
+
+pub use data::project::{self, *};
 
 #[async_trait]
 pub trait Service {
