@@ -14,6 +14,8 @@ pub struct Contract {
     scheme: Scheme,
 }
 
+pub struct Contracts(Vec<Contract>);
+
 pub struct State {
     id: Id,
     changes: Vec<Change>,
