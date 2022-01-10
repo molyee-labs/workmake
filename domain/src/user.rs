@@ -5,16 +5,6 @@ use url::Url;
 
 pub use data::user::{self, *};
 
-pub enum Login {
-    Name(String),
-    Phone(Phone),
-    Email(Email),
-}
-
-pub struct Password {
-    inner: String,
-}
-
 #[async_trait]
 pub trait Service {
     type Err;

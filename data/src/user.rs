@@ -6,6 +6,16 @@ use url::Url;
 
 pub struct Id(Uuid); // unique name
 
+pub enum Login {
+    Name(String),
+    Phone(Phone),
+    Email(Email),
+}
+
+pub struct Password {
+    inner: String,
+}
+
 pub struct User {
     id: Id,
     icon: Url,
