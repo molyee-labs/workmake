@@ -5,5 +5,5 @@ pub struct Args {
     #[clap(short, long)]
     user: Login,
     #[clap(short, long)]
-    password: String,
+    pass: Password,
 }

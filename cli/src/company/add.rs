@@ -2,6 +2,6 @@ use clap::Parser;
 
 #[derive(Parser)]
 pub struct Args {
-    company_id: String,
+    #[clap(from_os_str)]
     name: String,
 }

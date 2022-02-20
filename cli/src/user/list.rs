@@ -2,7 +2,8 @@ use clap::Parser;
 
 #[derive(Parser)]
 pub struct Args {
-    user: Option<user::Id>,
+    #[clap(long, default_value = 30)]
+    limit: u16,
+    #[clap(short, long)]
     company: Option<company::Id>,
-    project: Option<project::Id>,
 }
