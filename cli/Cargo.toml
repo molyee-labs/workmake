@@ -8,7 +8,7 @@ edition = "2021"
 [dependencies]
 log = "0.4"
 env_logger = "0.9"
-clap = "3.0.0-beta.5"
+clap = "3.1"
 colored = "2.0"
 domain = { path = "../domain" }
 data = { path = "../data" }
@@ -16,3 +16,7 @@ data = { path = "../data" }
 [[bin]]
 name = "willa"
 path = "src/main.rs"
+
+[features]
+default = []
+fast-alloc = ["mimalloc-rust"]
