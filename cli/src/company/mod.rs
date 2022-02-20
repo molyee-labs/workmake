@@ -17,10 +17,11 @@ pub struct Args {
 pub enum Command {
     Add(add::Args),
     Edit(edit::Args),
+    #[clap(alias = "ls")]
     List(list::Args),
     Remove(remove::Args),
 }
 
 pub(crate) fn handle(opts: Args) -> Result<()> {
-
+    todo!()
 }
