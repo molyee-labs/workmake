@@ -1,6 +1,4 @@
-use clap::Parser;
-use colored::*;
-use std::process::ExitCode;
+#![feature(process_exitcode_placeholder)]
 
 mod error;
 mod user;
@@ -10,6 +8,13 @@ mod job;
 mod account;
 mod search;
 
+use clap::Parser;
+use colored::*;
+use std::process::ExitCode;
+
+pub use crate::error::Error;
+pub(crate) use crate::error::Result;
+
 #[cfg(feature = "fast-alloc")]
 use mimalloc_rust::GlobalMiMalloc as GlobalAlloc;
 
@@ -18,26 +23,31 @@ use mimalloc_rust::GlobalMiMalloc as GlobalAlloc;
 static GLOBAL: GlobalAlloc = GlobalAlloc;
 
 #[derive(Parser)]
-pub struct Opts {
+#[clap(author, version, about, long_about = None)]
+pub struct Args {
     #[clap(subcommand)]
     pub commands: Command
 }
 
 #[derive(Parser)]
 pub enum Command {
-    User(UserOpts),
-    Company(CompanyOpts),
-    Project(ProjectOpts),
-    Job(JobOpts),
-    Account(AccountOpts),
-    Search(SearchOpts),
+    User(user::Args),
+    Company(company::Args),
+    Project(project::Args),
+    Job(job::Args),
+    Account(account::Args),
+    Search(search::Args),
 }
 
 fn main() -> ExitCode {
     env_logger::init();
-    let opts = Opts::parse();
+    let opts = Args::parse();
     if let Err(e) = handle(opts) {
-        print_fail()
+        print_fail();
+        eprintln!("{}: {}", "Error".bright_red().bold(), &e);
+        ExitCode::FAILURE
+    } else {
+        ExitCode::SUCCESS
     }
 }
 
@@ -49,7 +59,7 @@ pub(crate) fn print_ok() {
     println!("[{}]", "OK".bright_blue().bold())
 }
 
-fn handle(opts: Opts) -> Result<()> {
+fn handle(opts: Args) -> Result<()> {
     match opts.commands {
         Command::User(o) => user::handle(o),
         Command::Company(o) => company::handle(o),

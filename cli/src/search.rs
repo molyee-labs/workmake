@@ -1,8 +1,15 @@
-use clap::Parse;
+use crate::Result;
+use clap::Parser;
 
-#[derive(Parse)]
-pub struct SearchOpts {
+#[derive(Parser)]
+#[clap(author, version)]
+pub struct Args {
     scope: Vec<String>,
     exclude: Vec<String>,
+    user: Option<String>,
     pattern: String,
+}
+
+pub(crate) fn handle(opts: Args) -> Result<()> {
+
 }
