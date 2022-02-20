@@ -2,6 +2,7 @@ use clap::Parser;
 use colored::*;
 use std::process::ExitCode;
 
+mod error;
 mod user;
 mod company;
 mod project;
