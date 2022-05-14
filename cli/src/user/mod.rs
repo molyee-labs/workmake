@@ -19,6 +19,8 @@ pub enum Command {
     Login(login::Args),
     Logout(logout::Args),
     Edit(edit::Args),
+    #[clap(alias = "ls")]
+    List(list::Args),
 }
 
 pub(crate) fn handle(opts: Args) -> Result<()> {
